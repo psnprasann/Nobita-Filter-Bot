@@ -31,16 +31,12 @@ async def start(client, message):
             ]
             ]
         reply_markup = InlineKeyboardMarkup(buttons)
-        reply_markup = InlineKeyboardMarkup(buttons)
-        m=await message.reply_sticker("CAACAgUAAx0CcOCC0wAD6mWj_sCH23Ibx3QqRKb0wH_Ie7i8AAJOCwAC0dEgVWOb3p2u9Id9HgQ") 
-        await asyncio.sleep(100000000)
-        await m.delete()
-        await message.reply_photo(
-            photo=random.choice(PICS),
-            caption=script.START_TXT.format(message.from_user.mention, temp.U_NAME, temp.B_NAME),
-            reply_markup=reply_markup,
-            parse_mode=enums.ParseMode.HTML
-        )
+        await message.reply_sticker(sticker=random.choice(STICKERS), reply_markup=reply_markup)
+        await asyncio.sleep(3)
+        if not await db.get_chat(message.chat.id):
+            total=await client.get_chat_members_count(message.chat.id)
+            await client.send_message(LOG_CHANNEL, script.LOG_TEXT_G.format(message.chat.title, message.chat.id, total, "Unknown"))       
+            await db.add_chat(message.chat.id, message.chat.title)
         return 
     if not await db.is_user_exist(message.from_user.id):
         await db.add_user(message.from_user.id, message.from_user.first_name)
