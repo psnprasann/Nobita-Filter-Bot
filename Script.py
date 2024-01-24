@@ -1,8 +1,6 @@
 class script(object):
     START_TXT = """
-<b>✨ Hᴇʟʟᴏ {user}.
-
-Send Your Request Like This 👇
+<b>Send Your Request Like This 👇
 
 1) Movie Name ✅
 
