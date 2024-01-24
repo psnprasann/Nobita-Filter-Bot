@@ -1,11 +1,20 @@
 class script(object):
     START_TXT = """
-<b>{},
+<b>✨ Hᴇʟʟᴏ {user}.
 
-ɪ  ᴄᴀɴ  ᴘʀᴏᴠɪᴅᴇ  ᴍᴏᴠɪᴇs  ᴀɴᴅ  sᴇʀɪᴇs,
-ᴊᴜsᴛ  ᴀᴅᴅ  ᴍᴇ  ᴛᴏ  ʏᴏᴜʀ  ɢʀᴏᴜᴘ  ᴀɴᴅ  ᴇɴᴊᴏʏ  😍
+Send Your Request Like This 👇
 
-💞 ᴍᴀɪɴᴛᴀɪɴᴇᴅ ʙʏ : <a href='https://telegram.me/MovieVillaYT'>ᴍᴏᴠɪᴇ ᴠɪʟʟᴀ</a></b>
+1) Movie Name ✅
+
+       Kantara    
+
+2) Movie Name + Year ✅
+
+       Kantara (2022)
+➖️➖️➖️➖️➖️➖️➖️➖️➖️➖️➖️➖️➖️
+Bro Kantara send me ❌
+
+Kantara movie plz ❌</b>
 """
 
     HELP_TXT = """
@@ -243,15 +252,7 @@ Tɪᴘ: Sᴇʟᴇᴄᴛ "Lᴀɴɢᴜᴀɢᴇs" ᴏʀ "Sᴇᴀsᴏɴs" Bᴜᴛᴛ
 𝗡𝗮𝗺𝗲 <b>: {}</b>
 𝗠𝗲𝘀𝘀𝗮𝗴𝗲 <b>: {}</b>"""
 
-    CAPTION = """
-[{file_name}](https://telegram.me/NobiDeveloper)
-
-<b>•────•────────•────•
-📌 ʀᴇǫᴜᴇsᴛ ɢʀᴏᴜᴘ​ : [ᴄʟɪᴄᴋ ʜᴇʀᴇ](https://telegram.me/AllRequestGroups)
-🎬 ᴍᴏᴠɪᴇs ᴄʜᴀɴɴᴇʟ​ : [ᴄʟɪᴄᴋ ʜᴇʀᴇ](https://telegram.me/MovieVillaYT)
-•────•────────•────•
-
-©️ ᴘᴏᴡᴇʀᴇᴅ ʙʏ : [ᴍᴏᴠɪᴇ ᴠɪʟʟᴀ](https://youtube.com/@NobiDeveloper)</b>"""
+    CAPTION = """{file_name}"""
 
     IMDB_TEMPLATE_TXT = """
 <b>{title}</b>
