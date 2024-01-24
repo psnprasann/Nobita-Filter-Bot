@@ -319,8 +319,8 @@ async def start(client, message):
                     except:
                         return
                 await msg.edit_caption(f_caption)
-                k = await msg.reply("<b>⚠️  ᴀꜰᴛᴇʀ 𝟷𝟶 ᴍɪɴᴜᴛᴇꜱ ᴛʜɪꜱ ᴍᴇꜱꜱᴀɢᴇ ᴡɪʟʟ ʙᴇ ᴀᴜᴛᴏᴍᴀᴛɪᴄᴀʟʟʏ ᴅᴇʟᴇᴛᴇᴅ  🗑️</b>", quote=True)
-                await asyncio.sleep(600)
+                k = await msg.reply("<b>MoviesMagaa</b>", quote=True)
+                await asyncio.sleep(600000000)
                 await msg.delete()
                 await k.delete()
                 return
@@ -362,8 +362,8 @@ async def start(client, message):
                 ]
             )
         )
-        k = await msg.reply("<b>⚠️  ᴀꜰᴛᴇʀ 𝟷𝟶 ᴍɪɴᴜᴛᴇꜱ ᴛʜɪꜱ ᴍᴇꜱꜱᴀɢᴇ ᴡɪʟʟ ʙᴇ ᴀᴜᴛᴏᴍᴀᴛɪᴄᴀʟʟʏ ᴅᴇʟᴇᴛᴇᴅ  🗑️</b>", quote=True)
-        await asyncio.sleep(600)
+        k = await msg.reply("<b>MoviesMagaa</b>", quote=True)
+        await asyncio.sleep(600000000)
         await msg.delete()
         await k.delete()
         
@@ -451,8 +451,8 @@ async def start(client, message):
                 )
             )
             filesarr.append(msg)
-        k = await client.send_message(chat_id = message.from_user.id, text=f"<b>⚠️  ᴀꜰᴛᴇʀ 𝟷𝟶 ᴍɪɴᴜᴛᴇꜱ ᴛʜɪꜱ ᴍᴇꜱꜱᴀɢᴇ ᴡɪʟʟ ʙᴇ ᴀᴜᴛᴏᴍᴀᴛɪᴄᴀʟʟʏ ᴅᴇʟᴇᴛᴇᴅ  🗑️</b>")
-        await asyncio.sleep(600)
+        k = await client.send_message(chat_id = message.from_user.id, text=f"<b>MovisMagaa</b>")
+        await asyncio.sleep(600000000)
         await k.delete()
         return 
 
