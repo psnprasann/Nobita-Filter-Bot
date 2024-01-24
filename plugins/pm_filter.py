@@ -662,7 +662,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                         reply_markup=InlineKeyboardMarkup(
                             [
                              [
-                          InlineKeyboardButton("❤️‍🔥 ᴄʜᴀɴɴᴇʟ​ ❤️‍🔥", url="https://telegram.me/AllRequestGroups")
+                          InlineKeyboardButton(" ᴄʜᴀɴɴᴇʟ ​", url=CHNL_LNK)
                              ]
                             ]
                         )
@@ -707,7 +707,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             reply_markup=InlineKeyboardMarkup(
                 [
                  [
-                  InlineKeyboardButton("❤️‍🔥 ᴄʜᴀɴɴᴇʟ​ ❤️‍🔥", url="https://telegram.dog/AllRequestGroups")
+                  InlineKeyboardButton(" ᴄʜᴀɴɴᴇʟ ​", url=CHNL_LNK)
                  ]
                 ]
             )
@@ -1009,7 +1009,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                  InlineKeyboardButton('Jᴏɪɴ Cʜᴀɴɴᴇʟ', url=link.invite_link),
                  InlineKeyboardButton("Vɪᴇᴡ Sᴛᴀᴛᴜs", url=f"{query.message.link}")
                ],[
-                 InlineKeyboardButton("Rᴇᴏ̨ᴜᴇsᴛ Gʀᴏᴜᴘ Lɪɴᴋ", url="https://telegram.me/AllRequestGroups")
+                 InlineKeyboardButton(" ᴄʜᴀɴɴᴇʟ ​", url=CHNL_LNK)
                ]]
         if query.from_user.id in ADMINS:
             user = await client.get_users(from_user)
@@ -1034,7 +1034,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                  InlineKeyboardButton('Jᴏɪɴ Cʜᴀɴɴᴇʟ', url=link.invite_link),
                  InlineKeyboardButton("Vɪᴇᴡ Sᴛᴀᴛᴜs", url=f"{query.message.link}")
                ],[
-                 InlineKeyboardButton("Rᴇᴏ̨ᴜᴇsᴛ Gʀᴏᴜᴘ Lɪɴᴋ", url="https://telegram.me/AllRequestGroups")
+                 InlineKeyboardButton(" ᴄʜᴀɴɴᴇʟ ​", url=CHNL_LNK)
                ]]
         if query.from_user.id in ADMINS:
             user = await client.get_users(from_user)
@@ -1158,15 +1158,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "group_info":
         buttons = [[
-            InlineKeyboardButton('ꜱᴜʙꜱᴄʀɪʙᴇ  ᴍʏ  ʏᴛ  ᴄʜᴀɴɴᴇʟ', url="https://youtube.com/@NobiDeveloper"),
-        ],[
-            InlineKeyboardButton('ɢʀᴏᴜᴘ', url="https://telegram.me/AllRequestGroups"),
-            InlineKeyboardButton('ᴄʜᴀɴɴᴇʟ', url="https://telegram.me/NobiDeveloper")
-        ],[
-            InlineKeyboardButton('ꜱᴜᴘᴘᴏʀᴛ', url="https://telegram.me/NobiDeveloperSupport"),
-            InlineKeyboardButton('ᴜᴘᴅᴀᴛᴇꜱ', url="https://telegram.me/MovieVillaYT")
-        ],[
-            InlineKeyboardButton('ʙᴀᴄᴋ​', callback_data='start')
+            InlineKeyboardButton(" ᴄʜᴀɴɴᴇʟ ​", url=CHNL_LNK)
         ]]
         
         reply_markup = InlineKeyboardMarkup(buttons)
@@ -1182,15 +1174,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "about":
         buttons = [[
-            InlineKeyboardButton('ꜱᴛᴀᴛᴜꜱ', callback_data='stats'),
-            InlineKeyboardButton('ᴅɪꜱᴄʟᴀɪᴍᴇʀ', callback_data='source')
-        ],[
-            InlineKeyboardButton('ꜱᴜʙꜱᴄʀɪʙᴇ  ᴍʏ  ʏᴛ  ᴄʜᴀɴɴᴇʟ', url='https://youtube.com/@NobiDeveloper')
-        ],[
-            InlineKeyboardButton('ʀᴇᴘᴏʀᴛ  ʙᴜɢꜱ  ᴀɴᴅ  ꜰᴇᴇᴅʙᴀᴄᴋ', url='https://telegram.me/NobiDeveloperSupport')
-        ],[
-            InlineKeyboardButton('ʙᴀᴄᴋ', callback_data='start'),
-            InlineKeyboardButton('ᴄʟᴏsᴇ', callback_data='close_data')
+            InlineKeyboardButton(" ᴄʜᴀɴɴᴇʟ ​", url=CHNL_LNK)
         ]]
         await client.edit_message_media(
             query.message.chat.id, 
