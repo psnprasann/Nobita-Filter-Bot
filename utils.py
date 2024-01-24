@@ -640,7 +640,7 @@ async def send_all(bot, userid, files, ident, chat_id, user_name, query):
                         chat_id=userid,
                         file_id=file.file_id,
                         caption=f_caption,
-                        protect_content=True if ident == "filep" else False,
+                        protect_content=True,
                         reply_markup=InlineKeyboardMarkup(
                             [
                                 [
