@@ -22,7 +22,7 @@ BOT_TOKEN = environ.get('BOT_TOKEN')
 CACHE_TIME = int(environ.get('CACHE_TIME', 300))
 USE_CAPTION_FILTER = bool(environ.get('USE_CAPTION_FILTER', True))
 
-PICS = (environ.get('PICS', 'https://telegra.ph/file/6d8b1d3403448d11ed88d.jpg')).split()
+PICS = (environ.get('PICS', 'https://telegra.ph/file/6d8b1d3403448d11ed88d.jpg,https://telegra.ph/file/6d8b1d3403448d11ed88d.jpg')).split()
 NOR_IMG = environ.get("NOR_IMG", "https://telegra.ph/file/61ef9818986cef9554017.jpg")
 MELCOW_VID = environ.get("MELCOW_VID", "https://telegra.ph/file/61ef9818986cef9554017.jpg")
 SPELL_IMG = environ.get("SPELL_IMG", "https://telegra.ph/file/61ef9818986cef9554017.jpg")
@@ -48,7 +48,7 @@ DATABASE_NAME = environ.get('DATABASE_NAME', "")
 COLLECTION_NAME = environ.get('COLLECTION_NAME', 'Telegram_files')
 
 # stickers
-STICKERS = (environ.get('STICKERS', 'CAACAgUAAx0CcOCC0wAD3mWjWqQoZGIw0X2YPM6wXQERWbNJAAInDAACeuAZVS3vPzcReuFPHgQ')).split()
+STICKERS = (environ.get('STICKERS', 'CAACAgUAAx0CcOCC0wACAQxlsKAcm6-QyOnX3SjIiDgFz2GOcAACJwwAAnrgGVUt7z83EXrhTx4E CAACAgUAAx0CcOCC0wACAQxlsKAcm6-QyOnX3SjIiDgFz2GOcAACJwwAAnrgGVUt7z83EXrhTx4E')).split()
 
 #Auto approve 
 CHAT_ID = [int(app_chat_id) if id_pattern.search(app_chat_id) else app_chat_id for app_chat_id in environ.get('CHAT_ID', '').split()]
