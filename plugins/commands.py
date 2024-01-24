@@ -319,7 +319,7 @@ async def start(client, message):
                     except:
                         return
                 await msg.edit_caption(f_caption)
-                k = await msg.reply("<b>MoviesMagaa</b>", quote=True)
+                k = await msg.reply("<b>If You Get Any Error In File, ⭕️Check out VLC Player For Android https://play.google.com/store/apps/details?id=org.videolan.vlc</b>", quote=True)
                 await asyncio.sleep(600000000)
                 await msg.delete()
                 await k.delete()
@@ -362,7 +362,7 @@ async def start(client, message):
                 ]
             )
         )
-        k = await msg.reply("<b>MoviesMagaa</b>", quote=True)
+        k = await msg.reply("<b>If You Get Any Error In File, ⭕️Check out VLC Player For Android https://play.google.com/store/apps/details?id=org.videolan.vlc</b>", quote=True)
         await asyncio.sleep(600000000)
         await msg.delete()
         await k.delete()
