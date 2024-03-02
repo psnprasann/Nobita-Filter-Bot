@@ -32,7 +32,7 @@ async def start(client, message):
             ]
         reply_markup = InlineKeyboardMarkup(buttons)
         await message.reply_sticker(sticker=random.choice(STICKERS), reply_markup=reply_markup)
-        await asyncio.sleep(3)
+        await asyncio.sleep(2)
         if not await db.get_chat(message.chat.id):
             total=await client.get_chat_members_count(message.chat.id)
             await client.send_message(LOG_CHANNEL, script.LOG_TEXT_G.format(message.chat.title, message.chat.id, total, "Unknown"))       
@@ -45,12 +45,18 @@ async def start(client, message):
         buttons = [[
             InlineKeyboardButton('⇄  ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ  ⇄', url=f'http://telegram.me/{temp.U_NAME}?startgroup=true')
             ],[
-            InlineKeyboardButton('✇ Jᴏɪɴ Uᴘᴅᴀᴛᴇs Cʜᴀɴɴᴇʟ ✇', url=CHNL_LNK)
+            InlineKeyboardButton('👨‍💻  ᴏᴡɴᴇʀ​', callback_data='button'),
+            InlineKeyboardButton('🌿  ꜱᴜᴘᴘᴏʀᴛ', callback_data='group_info')
+            ],[
+            InlineKeyboardButton('💠  ʜᴇʟᴘ  💠', callback_data='help'),
+            InlineKeyboardButton('♻️  ᴀʙᴏᴜᴛ  ♻️', callback_data='about')
+            ],[
+            InlineKeyboardButton('💰  ᴇᴀʀɴ ᴍᴏɴᴇʏ ᴡɪᴛʜ ʙᴏᴛ  💸', callback_data='shortlink_info')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await message.reply_photo(
             photo=random.choice(PICS),
-            caption=script.START_TXT,
+            caption=script.START_TXT.format(message.from_user.mention, temp.U_NAME, temp.B_NAME),
             reply_markup=reply_markup,
             parse_mode=enums.ParseMode.HTML
         )
@@ -85,10 +91,16 @@ async def start(client, message):
         return
     if len(message.command) == 2 and message.command[1] in ["subscribe", "error", "okay", "help"]:
         buttons = [[
-                    InlineKeyboardButton('⤬ Aᴅᴅ Mᴇ Tᴏ Yᴏᴜʀ Gʀᴏᴜᴘ ⤬', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
-                ],[
-                    InlineKeyboardButton('✇ Jᴏɪɴ Uᴘᴅᴀᴛᴇs Cʜᴀɴɴᴇʟ ✇', url=CHNL_LNK)
-                  ]]
+            InlineKeyboardButton('⇄  ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ  ⇄', url=f'http://telegram.me/{temp.U_NAME}?startgroup=true')
+            ],[
+            InlineKeyboardButton('👨‍💻  ᴏᴡɴᴇʀ​', callback_data='button'),
+            InlineKeyboardButton('🌿  ꜱᴜᴘᴘᴏʀᴛ', callback_data='group_info')
+            ],[
+            InlineKeyboardButton('💠  ʜᴇʟᴘ  💠', callback_data='help'),
+            InlineKeyboardButton('♻️  ᴀʙᴏᴜᴛ  ♻️', callback_data='about')
+            ],[
+            InlineKeyboardButton('💰  ᴇᴀʀɴ ᴍᴏɴᴇʏ ᴡɪᴛʜ ʙᴏᴛ  💸', callback_data='shortlink_info')
+        ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await message.reply_photo(
             photo=random.choice(PICS),
@@ -134,11 +146,11 @@ async def start(client, message):
                     chat_id=message.from_user.id,
                     file_id=msg.get("file_id"),
                     caption=f_caption,
-                    protect_content=msg.get('protect', True),
+                    protect_content=msg.get('protect', False),
                     reply_markup=InlineKeyboardMarkup(
                         [
                          [
-                          InlineKeyboardButton(" ᴄʜᴀɴɴᴇʟ ​", url=CHNL_LNK)
+                          InlineKeyboardButton("❤️‍🔥 ᴄʜᴀɴɴᴇʟ​ ❤️‍🔥", url="https://telegram.me/AllRequestGroups")
                          ]
                         ]
                     )
@@ -150,11 +162,11 @@ async def start(client, message):
                     chat_id=message.from_user.id,
                     file_id=msg.get("file_id"),
                     caption=f_caption,
-                    protect_content=msg.get('protect', True),
+                    protect_content=msg.get('protect', False),
                     reply_markup=InlineKeyboardMarkup(
                         [
                          [
-                          InlineKeyboardButton(" ᴄʜᴀɴɴᴇʟ ​", url=CHNL_LNK)
+                          InlineKeyboardButton("❤️‍🔥 ᴄʜᴀɴɴᴇʟ​ ❤️‍🔥", url="https://telegram.me/AllRequestGroups")
                          ]
                         ]
                     )
@@ -299,11 +311,11 @@ async def start(client, message):
                 msg = await client.send_cached_media(
                     chat_id=message.from_user.id,
                     file_id=file_id,
-                    protect_content=True,
+                    protect_content=True if pre == 'filep' else False,
                     reply_markup=InlineKeyboardMarkup(
                         [
                          [
-                          InlineKeyboardButton(" ᴄʜᴀɴɴᴇʟ ​", url=CHNL_LNK)
+                          InlineKeyboardButton("❤️‍🔥 ᴄʜᴀɴɴᴇʟ​ ❤️‍🔥", url="https://telegram.me/AllRequestGroups")
                          ]
                         ]
                     )
@@ -319,8 +331,8 @@ async def start(client, message):
                     except:
                         return
                 await msg.edit_caption(f_caption)
-                k = await msg.reply("<b>If You Get Any Error In File, ⭕️Check out VLC Player For Android https://play.google.com/store/apps/details?id=org.videolan.vlc</b>", quote=True)
-                await asyncio.sleep(600000000)
+                k = await msg.reply("<b>⚠️  ᴀꜰᴛᴇʀ 𝟷𝟶 ᴍɪɴᴜᴛᴇꜱ ᴛʜɪꜱ ᴍᴇꜱꜱᴀɢᴇ ᴡɪʟʟ ʙᴇ ᴀᴜᴛᴏᴍᴀᴛɪᴄᴀʟʟʏ ᴅᴇʟᴇᴛᴇᴅ  🗑️</b>", quote=True)
+                await asyncio.sleep(600)
                 await msg.delete()
                 await k.delete()
                 return
@@ -353,17 +365,17 @@ async def start(client, message):
             chat_id=message.from_user.id,
             file_id=file_id,
             caption=f_caption,
-            protect_content=True,
+            protect_content=True if pre == 'filep' else False,
             reply_markup=InlineKeyboardMarkup(
                 [
                  [
-                  InlineKeyboardButton(" ᴄʜᴀɴɴᴇʟ ​", url=CHNL_LNK)
+                  InlineKeyboardButton("❤️‍🔥 ᴄʜᴀɴɴᴇʟ​ ❤️‍🔥", url="https://telegram.me/AllRequestGroups")
                  ]
                 ]
             )
         )
-        k = await msg.reply("<b>If You Get Any Error In File, ⭕️Check out VLC Player For Android https://play.google.com/store/apps/details?id=org.videolan.vlc</b>", quote=True)
-        await asyncio.sleep(600000000)
+        k = await msg.reply("<b>⚠️  ᴀꜰᴛᴇʀ 𝟷𝟶 ᴍɪɴᴜᴛᴇꜱ ᴛʜɪꜱ ᴍᴇꜱꜱᴀɢᴇ ᴡɪʟʟ ʙᴇ ᴀᴜᴛᴏᴍᴀᴛɪᴄᴀʟʟʏ ᴅᴇʟᴇᴛᴇᴅ  🗑️</b>", quote=True)
+        await asyncio.sleep(600)
         await msg.delete()
         await k.delete()
         
@@ -391,11 +403,11 @@ async def start(client, message):
                     msg = await client.send_cached_media(
                         chat_id=message.from_user.id,
                         file_id=file_id,
-                        protect_content=True,
+                        protect_content=True if pre == 'filep' else False,
                         reply_markup=InlineKeyboardMarkup(
                             [
                              [
-                              InlineKeyboardButton(" ᴄʜᴀɴɴᴇʟ ​", url=CHNL_LNK)
+                              InlineKeyboardButton("❤️‍🔥 ᴄʜᴀɴɴᴇʟ​ ❤️‍🔥", url="https://telegram.me/AllRequestGroups")
                              ]
                             ]
                         )
@@ -441,18 +453,18 @@ async def start(client, message):
                 chat_id=message.from_user.id,
                 file_id=file_id,
                 caption=f_caption,
-                protect_content=True,
+                protect_content=True if pre == 'filep' else False,
                 reply_markup=InlineKeyboardMarkup(
                     [
                      [
-                      InlineKeyboardButton(" ᴄʜᴀɴɴᴇʟ ​", url=CHNL_LNK)
+                      InlineKeyboardButton("❤️‍🔥 ᴄʜᴀɴɴᴇʟ​ ❤️‍🔥", url="https://telegram.me/AllRequestGroups")
                      ]
                     ]
                 )
             )
             filesarr.append(msg)
-        k = await client.send_message(chat_id = message.from_user.id, text=f"<b>MovisMagaa</b>")
-        await asyncio.sleep(600000000)
+        k = await client.send_message(chat_id = message.from_user.id, text=f"<b>⚠️  ᴀꜰᴛᴇʀ 𝟷𝟶 ᴍɪɴᴜᴛᴇꜱ ᴛʜɪꜱ ᴍᴇꜱꜱᴀɢᴇ ᴡɪʟʟ ʙᴇ ᴀᴜᴛᴏᴍᴀᴛɪᴄᴀʟʟʏ ᴅᴇʟᴇᴛᴇᴅ  🗑️</b>")
+        await asyncio.sleep(600)
         await k.delete()
         return 
 
@@ -1053,6 +1065,8 @@ async def removetutorial(bot, message):
     btn = [[
         InlineKeyboardButton(text="ʀᴇᴘᴏ", url="https://github.com/NobiDeveloper/Nobita-Filter-Bot"),
         InlineKeyboardButton(text="ᴏᴡɴᴇʀ", url="https://telegram.me/NobiDeveloperr")
+        ],[
+        InlineKeyboardButton(text="ꜱᴜʙꜱᴄʀɪʙᴇ  ᴍʏ  ʏᴛ  ᴄʜᴀɴɴᴇʟ", url="https://youtube.com/@Nobideveloper")
     ]]
     userid = message.from_user.id if message.from_user else None
     if not userid:
